@@ -1,0 +1,47 @@
+<html>
+    <head>
+<link rel="stylesheet" href="./style.css">
+<title>js</title>
+    </head>
+    <body>
+<h1>Quote of the Day</h1>
+<p>Press the button below to recieve a random quote!</p>
+<button id="showMessage">New Quote</button>
+   
+    <div id="output">
+        <p id="quote"></p>
+        <p id="author"></p>
+    </div>
+
+   
+
+        <script src="./java/bootstrap.bundle.min(1).js"></script>
+        <script src="./main.js"></script>
+
+        <script>
+           const messages = [
+         {  text: "Do not take life too seriously. You will not get out alive.",author:"--Elbert Hubbard"},
+           {text: "The best revenge is massive success.",author:"--Frank Sinatra"},
+           { text:"Resentment is like drinking poison and waiting for your enemies to die.",author:"--Nelson Mandela"},
+           {text:"It's not what happens to you, but how you react to it that matters.",author:"--Epictetus"},
+           {text: "Do not take life too seriously. You will not get out alive.",author:"--Elbert Hubbard"},
+           {text: "The best revenge is massive success.",author:"--Frank Sinatra"},
+           {text: "You miss 100% of the shots you don't take.",author:"--Wayne Gretzy"}
+        ];
+      var Index = 0; 
+        document.getElementById("showMessage").addEventListener("click", () => {
+            const quoteElement = document.getElementById("quote");
+            const authorElement = document.getElementById("author");
+            const randomIndex = Math.floor(Math.random() * messages.length);
+            quoteElement.textContent = messages[Index].text; 
+            authorElement.textContent = `-- ${messages[Index].author}`; 
+            Index = (Index + 1) % messages.length; 
+        });
+        </script>
+       
+
+
+
+       
+    </body>
+</html>
